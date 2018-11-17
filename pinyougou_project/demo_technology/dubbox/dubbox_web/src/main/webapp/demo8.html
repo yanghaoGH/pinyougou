@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>angularJS入门案例7 对象数组遍历</title>
+	<script src="angular.min.js"></script>
+	<script>
+        var app=angular.module('myApp',[]); //定义了一个叫 myApp 的模块
+        //定义控制器
+        app.controller('myController',function($scope,$http){
+            $scope.findList=function(){
+                $http.get('data.json').success(
+                    function(response){
+                        $scope.list=response;
+                    }
+                );
+            }
+        });
+	</script>
+</head>
+</head>
+	
+<body ng-app="myApp" ng-controller="myController" ng-init="findList()">
+	<table>
+		<tr>
+			<td>姓名</td>
+			<td>数学</td>
+			<td>英语</td>
+		</tr>
+		<tr ng-repeat="entry in list">
+			<td>{{entry.name}}</td>
+			<td>{{entry.math}}</td>
+			<td>{{entry.english}}</td>
+		</tr>
+	</table>
+</body>
+</html>

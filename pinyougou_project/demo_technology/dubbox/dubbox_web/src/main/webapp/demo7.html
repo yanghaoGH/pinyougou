@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>angularJS入门案例7 对象数组遍历</title>
+	<script src="angular.min.js"></script>
+	<script>
+		var app=angular.module("myApp",[]);
+		app.controller("myController",function($scope){
+			$scope.list=[
+			{name:"张三",math:150,english:145},
+			{name:"李四",math:120,english:110},
+			{name:"王五",math:80,english:150}
+			];
+		});
+	</script>
+</head>
+	
+<body ng-app="myApp" ng-controller="myController">	
+	<table>
+		<tr>
+			<td>姓名</td>
+			<td>数学</td>
+			<td>英语</td>
+		</tr>
+		<tr ng-repeat="entry in list">
+			<td>{{entry.name}}</td>
+			<td>{{entry.math}}</td>
+			<td>{{entry.english}}</td>
+		</tr>
+	</table>
+</body>
+</html>

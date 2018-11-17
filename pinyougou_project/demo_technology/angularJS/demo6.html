@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>angularJS入门案例6 数组遍历</title>
+	<script src="angular.min.js"></script>
+	<script>
+		var app=angular.module("myApp",[]);
+		app.controller("myController",function($scope){
+			$scope.list=[1,2,3,4,5,6];
+		});
+	</script>
+</head>
+	
+<body ng-app="myApp" ng-controller="myController">	
+	<table>
+		<tr ng-repeat="x in list">
+			<td>{{x}}</td>
+		</tr>
+	</table>
+</body>
+</html>
